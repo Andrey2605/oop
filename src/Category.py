@@ -11,6 +11,5 @@ class Category:
         self.description = desacription
         self.products = products
 
-
         Category.category_count += 1
         Category.product_count += len(products)
