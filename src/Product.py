@@ -11,7 +11,7 @@ class Product:
         self.quantity = quantity
 
     def __str__(self):
-        return f"{self.name}, {self.description}, {self.price} руб. Остаток: {self.quantity} шт."
+        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
 
     @property
     def price(self):

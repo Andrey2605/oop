@@ -1,3 +1,5 @@
+from itertools import count
+
 from src.Product import Product
 
 
@@ -31,8 +33,14 @@ class Category:
             product_str += f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n"
         return product_str
 
+    def sum_product(self):
+        count = 0
+        for product in self.__products:
+            count += product.quantity
+        return count
+
     def __str__(self):
-        return f"{self.name}, {self.category_count}: {self.product_count}"
+        return f"{self.name}, {self.category_count}: {self.sum_product()}"
 
 
 
