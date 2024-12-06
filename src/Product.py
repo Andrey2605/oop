@@ -7,8 +7,11 @@ class Product:
     def __init__(self, name, desacription, price, quantity):
         self.name = name
         self.description = desacription
-        self.price = price
+        self.__price = price
         self.quantity = quantity
+
+    def __str__(self):
+        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
 
     @property
     def price(self):
@@ -29,3 +32,5 @@ class Product:
         quantity = product_data.get("quantity")
         return cls(name, description, price, quantity)
 
+    def __add__(self, other):
+        return self.__price * self.quantity + other.__price * other.quantity
