@@ -20,6 +20,6 @@ def test_init(category):
     assert category.category_count == 1
     assert category.product_count == 3
 
-def test_product_list(product):
+def test_products(product):
     assert f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт." == "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт."
 
