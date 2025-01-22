@@ -109,3 +109,9 @@ def test_lawng_rass(grass2):
     assert grass2.country == "США"
     assert grass2.germination_period == "5 дней"
     assert grass2.color == "Темно-зеленый"
+
+
+def test_print_mixin(capsys):
+    Product("55 QLED 4K", "Фоновая подсветка", 123000.0, 7)
+    message = capsys.readouterr()
+    assert message.out.strip() == "Product('55 QLED 4K', 'Фоновая подсветка', 123000.0, 7)"
