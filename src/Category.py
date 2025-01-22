@@ -36,3 +36,9 @@ class Category:
 
     def __str__(self):
         return f"{self.name}, {self.category_count}: {self.sum_product()}"
+
+    def middle_price(self):
+        try:
+            return sum([products.price for products in self.__products]) / len(self.__products)
+        except ZeroDivisionError:
+            return 0
