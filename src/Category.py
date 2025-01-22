@@ -1,5 +1,3 @@
-from itertools import count
-
 from src.Product import Product
 
 
@@ -16,15 +14,12 @@ class Category:
         self.description = desacription
         self.__products = products if products else []
 
-
         Category.category_count += 1
         Category.product_count += len(self.__products)
-
 
     def add_product(self, new_product: Product):
         self.__products.append(new_product)
         Category.product_count += 1
-
 
     @property
     def products(self):
@@ -41,6 +36,3 @@ class Category:
 
     def __str__(self):
         return f"{self.name}, {self.category_count}: {self.sum_product()}"
-
-
-
